@@ -9,7 +9,6 @@
   color: #000000;
 }
 
-/* --- Global Reset & Layout --- */
 * {
   margin: 0;
   padding: 0;
@@ -20,8 +19,8 @@ body {
   font-family: "IBM Plex Mono", monospace;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Ensures body takes full screen height */
-  overflow-x: hidden;
+  min-height: 100vh; /* This is key */
+  margin: 0;
 }
 
 .column-wrapper {
@@ -30,10 +29,10 @@ body {
   margin: 0 auto;
 }
 
-/* --- Header & Navigation --- */
+/* --- Navigation --- */
 header {
   padding-top: 2.5rem;
-  flex-shrink: 0; /* Prevents header from shrinking */
+  flex-shrink: 0;
 }
 
 nav {
@@ -48,29 +47,24 @@ nav {
   font-size: 1rem;
   letter-spacing: 0.06rem;
 }
-
 .no-underline {
   text-decoration: none;
 }
-
 .menu a {
   text-decoration: none;
   font-size: 0.8rem;
   margin-left: 1.25rem;
   transition: color 0.3s ease;
 }
-
 .menu a.medium {
   color: #999999;
 }
-
 .menu a:hover {
   color: #000000;
 }
 
 .dark-border {
   border-top: 0.12rem solid #000000 !important;
-  opacity: 1 !important;
 }
 
 .separator {
@@ -80,20 +74,13 @@ nav {
   margin: 0;
 }
 
-/* --- Main Content (The "Magic" Part) --- */
+/* --- Main Content Area --- */
 main {
-  flex: 1 0 auto; /* Fills all available space between header and footer */
+  flex: 1 0 auto; /* Pushes footer down */
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centers generator/content vertically */
-  align-items: center; /* Centers generator/content horizontally */
-  padding: 2rem 0;
-}
-
-/* Target for Status Page */
-main#trigger-area {
-  cursor: default;
-  user-select: none;
+  justify-content: center; /* Vertical center */
+  align-items: center; /* Horizontal center */
 }
 
 .generator-container {
@@ -115,26 +102,12 @@ main#trigger-area {
   line-height: 1.4;
   transition: opacity 0.2s ease;
   text-align: center;
-  margin: 0 auto;
-  min-height: 4.5rem;
-  word-wrap: break-word;
-}
-
-/* --- Thoughts List Styles --- */
-.thought-list {
-  width: 100%;
-  padding-top: 1rem;
-}
-
-.thought-item {
-  margin-bottom: 3rem;
 }
 
 /* --- Footer --- */
 footer {
-  flex-shrink: 0; /* Ensures footer stays at its height */
+  flex-shrink: 0;
   padding-bottom: 2.5rem;
-  margin-top: auto; /* Safety push to the bottom */
 }
 
 .footer-content {
