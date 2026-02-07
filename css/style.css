@@ -1,0 +1,143 @@
+/* --- Color System --- */
+.light {
+  background-color: #ffffff;
+}
+.medium {
+  color: #999999;
+}
+.dark {
+  color: #000000;
+}
+
+/* --- Global Reset & Layout --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "IBM Plex Mono", monospace;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures body takes full screen height */
+  overflow-x: hidden;
+}
+
+.column-wrapper {
+  width: 90%;
+  max-width: 40.625rem;
+  margin: 0 auto;
+}
+
+/* --- Header & Navigation --- */
+header {
+  padding-top: 2.5rem;
+  flex-shrink: 0; /* Prevents header from shrinking */
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1.25rem;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.06rem;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
+.menu a {
+  text-decoration: none;
+  font-size: 0.8rem;
+  margin-left: 1.25rem;
+  transition: color 0.3s ease;
+}
+
+.menu a.medium {
+  color: #999999;
+}
+
+.menu a:hover {
+  color: #000000;
+}
+
+.dark-border {
+  border-top: 0.12rem solid #000000 !important;
+  opacity: 1 !important;
+}
+
+.separator {
+  border: none;
+  width: 100%;
+  display: block;
+  margin: 0;
+}
+
+/* --- Main Content (The "Magic" Part) --- */
+main {
+  flex: 1 0 auto; /* Fills all available space between header and footer */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers generator/content vertically */
+  align-items: center; /* Centers generator/content horizontally */
+  padding: 2rem 0;
+}
+
+/* Target for Status Page */
+main#trigger-area {
+  cursor: default;
+  user-select: none;
+}
+
+.generator-container {
+  width: 100%;
+}
+
+#timestamp-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 0.6rem;
+  margin-bottom: 2.5rem;
+  letter-spacing: 1px;
+}
+
+#output-sentence {
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.4;
+  transition: opacity 0.2s ease;
+  text-align: center;
+  margin: 0 auto;
+  min-height: 4.5rem;
+  word-wrap: break-word;
+}
+
+/* --- Thoughts List Styles --- */
+.thought-list {
+  width: 100%;
+  padding-top: 1rem;
+}
+
+.thought-item {
+  margin-bottom: 3rem;
+}
+
+/* --- Footer --- */
+footer {
+  flex-shrink: 0; /* Ensures footer stays at its height */
+  padding-bottom: 2.5rem;
+  margin-top: auto; /* Safety push to the bottom */
+}
+
+.footer-content {
+  padding-top: 1.25rem;
+  font-size: 0.7rem;
+}
